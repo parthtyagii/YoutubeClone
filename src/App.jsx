@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
+import Main from './components/Main/Main';
 
 
 
@@ -11,7 +12,7 @@ function App() {
     <div className='App'>
 
       <Navbar />
-      <SideDrawer />
+      <Main />
 
     </div>
   );
