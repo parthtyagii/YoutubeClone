@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
+import SideDrawer from './components/SideDrawer/SideDrawer';
 
 
 
@@ -10,6 +11,7 @@ function App() {
     <div className='App'>
 
       <Navbar />
+      <SideDrawer />
 
     </div>
   );
