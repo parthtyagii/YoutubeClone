@@ -1,25 +1,27 @@
-.navbarContainer{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+
+
+
+
+.navbarContainer {
     width: 100%;
-    min-height: 6rem;
-    /* background-color: pink; */
+    height: 6.2rem;
     border-bottom: 2px solid #b1b5bb73;
     padding: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
-
-    /* position: fixed;
-    top: 0;
-    z-index: 0; */
+    font-family: 'Roboto Condensed', sans-serif;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbarContainer .leftPart{
+.navbarContainer .leftPart {
     width: auto;
     height: auto;
-    /* background-color: antiquewhite; */
 
     display: flex;
     justify-content: space-between;
@@ -27,15 +29,18 @@
     column-gap: 4rem;
 }
 
-.navbarContainer .leftPart .sideDrawer{
+.navbarContainer .leftPart .sideDrawer {
     font-size: 2.4rem;
+    cursor: pointer;
+    color: #5f6064;
 }
 
-.navbarContainer .leftPart .title{
+.navbarContainer .leftPart .title {
     font-size: 2.4rem;
+    font-weight: 700;
 }
 
-.navbarContainer .middlePart{
+.navbarContainer .middlePart {
     width: 40%;
     height: auto;
 
@@ -46,10 +51,10 @@
     align-items: center;
 }
 
-.navbarContainer .middlePart input{
+.navbarContainer .middlePart input {
     width: 100%;
     height: 3.2rem;
-    border: 1px solid gray;
+    border: 1px solid #6f717573;
     border-radius: 0.5rem;
     padding-left: 1rem;
     padding-right: 4rem;
@@ -57,18 +62,18 @@
     letter-spacing: 0.02rem;
 }
 
-.navbarContainer .middlePart input:focus{
+.navbarContainer .middlePart input:focus {
     outline: none;
 }
 
-.navbarContainer .middlePart .searchIcon{
+.navbarContainer .middlePart .searchIcon {
     font-size: 1.7rem;
 
     position: absolute;
     right: 1.2rem;
 }
 
-.navbarContainer .rightPart{
+.navbarContainer .rightPart {
     width: auto;
     height: auto;
 
@@ -78,12 +83,12 @@
     column-gap: 2rem;
 }
 
-.navbarContainer .rightPart .videoIcon{
+.navbarContainer .rightPart .videoIcon {
     font-size: 2.3rem;
-    color: rgba(116,204,28,255);
+    color: rgba(116, 204, 28, 255);
 }
 
-.navbarContainer .rightPart .userPic{
+.navbarContainer .rightPart .userPic {
     width: auto;
     height: auto;
     border: 1px solid gray;
@@ -93,12 +98,9 @@
     align-items: center;
 }
 
-.navbarContainer .rightPart .userPic img{
+.navbarContainer .rightPart .userPic img {
     width: 4.2rem;
     height: 4.2rem;
     border-radius: 50%;
     object-fit: cover;
 }
-
-
-

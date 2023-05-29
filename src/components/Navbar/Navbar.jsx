@@ -5,20 +5,20 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { HiOutlineSearch } from 'react-icons/hi';
 
 
-function Navbar() {
+function Navbar({ setShowDrawer, showDrawer }) {
     return (
         <div className='navbarContainer'>
 
             <div className="leftPart">
-                <RxHamburgerMenu className='sideDrawer' />
+                <RxHamburgerMenu onClick={() => setShowDrawer(!showDrawer)} className='sideDrawer' />
 
                 <span className="title">
-                    rumble
+                    MeTube
                 </span>
             </div>
 
             <div className="middlePart">
-                <input type="text" placeholder='Search'/>
+                <input type="text" placeholder='Search' />
 
                 <HiOutlineSearch className='searchIcon' />
             </div>

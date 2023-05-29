@@ -8,14 +8,14 @@ import { BiHelpCircle } from 'react-icons/bi';
 
 
 
-function SideDrawer() {
+function SideDrawer({ allVideos, showDrawer, setShowDrawer }) {
 
-    const [showDrawer, setShowDrawer] = useState(true);
+    console.log(allVideos)
 
     return (
-        <div className='sideDrawerContainer'>
+        <div className='sideDrawerContainer' style={showDrawer ? { width: '16%' } : { width: 'auto' }}>
             <div className="upperPart">
-                <div className="options">
+                <div className="options" style={showDrawer ? { justifyContent: 'flex-start' } : { justifyContent: 'center' }}>
                     <FiHome className='optionsIcon' />
 
                     {showDrawer && (
@@ -23,7 +23,7 @@ function SideDrawer() {
                     )}
                 </div>
 
-                <div className="options">
+                <div className="options" style={showDrawer ? { justifyContent: 'flex-start' } : { justifyContent: 'center' }}>
                     <BsFillPersonCheckFill className='optionsIcon' />
 
                     {showDrawer && (
@@ -31,7 +31,7 @@ function SideDrawer() {
                     )}
                 </div>
 
-                <div className="options">
+                <div className="options" style={showDrawer ? { justifyContent: 'flex-start' } : { justifyContent: 'center' }}>
                     <FiTrendingUp className='optionsIcon' />
 
                     {showDrawer && (
@@ -40,51 +40,38 @@ function SideDrawer() {
                 </div>
             </div>
 
-            <div className="middlePart">
+            <div className="middlePart" style={showDrawer ? { paddingTop: '0' } : { paddingTop: '1rem' }}>
                 {showDrawer && (
                     <div className="header">My Subscriptions</div>
                 )}
 
-                <div className="subscription">
-                    <span>
-                        <img src="https://pbs.twimg.com/card_img/1659215351601676289/FkXZ6ew3?format=jpg&name=900x900" alt="person" />
-                    </span>
+                {allVideos && (
+                    allVideos.map((v) => {
 
-                    {showDrawer && (
-                        <span>Cleo Abrahm</span>
-                    )}
-                </div>
+                        return (
+                            <div className="subscription" style={showDrawer ? { justifyContent: 'flex-start' } : { justifyContent: 'center' }}>
+                                <span>
+                                    <img src={v.creator.pic} alt="person" />
+                                </span>
 
-                <div className="subscription">
-                    <span>
-                        <img src="https://pbs.twimg.com/card_img/1659215351601676289/FkXZ6ew3?format=jpg&name=900x900" alt="person" />
-                    </span>
-
-                    {showDrawer && (
-                        <span>Cleo Abrahm</span>
-                    )}
-                </div>
-
-                <div className="subscription">
-                    <span>
-                        <img src="https://pbs.twimg.com/card_img/1659215351601676289/FkXZ6ew3?format=jpg&name=900x900" alt="person" />
-                    </span>
-
-                    {showDrawer && (
-                        <span>Cleo Abrahm</span>
-                    )}
-                </div>
+                                {showDrawer && (
+                                    <span>{v.creator.name}</span>
+                                )}
+                            </div>
+                        );
+                    })
+                )}
             </div>
 
             <div className="lowerPart">
-                <div>
+                <div style={showDrawer ? { justifyContent: 'flex-start' } : { justifyContent: 'center' }}>
                     <FiSettings className='lowerIcon' />
                     {showDrawer && (
                         <span>Settings</span>
                     )}
                 </div>
 
-                <div>
+                <div style={showDrawer ? { justifyContent: 'flex-start' } : { justifyContent: 'center' }}>
                     <BiHelpCircle className='lowerIcon' />
                     {showDrawer && (
                         <span>Help</span>

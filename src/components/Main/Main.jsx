@@ -6,14 +6,15 @@ import axios, { all } from 'axios';
 
 
 
-function Main() {
+function Main({ showDrawer, setShowDrawer }) {
 
     const [allVideos, setAllVideos] = useState(null);
+    const [page, setPage] = useState(1);
 
     const getAllVideo = async () => {
         try {
-            const response = await axios.get('https://internship-service.onrender.com/videos?page=1');
-            console.log(response.data.data.posts);
+            const response = await axios.get(`https://internship-service.onrender.com/videos?page=${page}`);
+            // console.log(response.data.data.posts);
             setAllVideos(response.data.data.posts);
         }
         catch (err) {
@@ -21,38 +22,70 @@ function Main() {
         }
     };
 
+    const nextPage = () => {
+        if (page < 9) {
+            setPage(page + 1);
+        }
+        else {
+            return;
+        }
+    }
+
+    const prevPage = () => {
+        if (page == 1) {
+            return;
+        }
+        else {
+            setPage(page - 1);
+        }
+    }
+
     useEffect(() => {
         getAllVideo();
-    }, []);
+    }, [page]);
 
     return (
-        <div className='mainContainer'>
+        <main>
 
-            <SideDrawer />
 
-            <div className="videoSection">
-                <div className="videoCategories">
-                    <div className="category">All</div>
-                    <div className="category">News</div>
-                    <div className="category">Viral</div>
-                    <div className="category">Gaming</div>
-                    <div className="category">Podcast</div>
-                    <div className="category">Leaderboard</div>
-                </div>
 
-                <div className="videoSuggestions">
+            
+        </main>
+        
+        // <div className='mainContainer'>
 
-                    {allVideos && (
-                        allVideos.map((v, index) => {
-                            return (
-                                <Video data={v} key={Math.random()} />
-                            );
-                        })
-                    )}
+        //     <SideDrawer allVideos={allVideos} showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
 
-                </div>
-            </div>
-        </div>
+        //     <div className="videoSection">
+        //         <div className="videoCategories">
+        //             <div className="category">All</div>
+        //             <div className="category">News</div>
+        //             <div className="category">Viral</div>
+        //             <div className="category">Gaming</div>
+        //             <div className="category">Podcast</div>
+        //             <div className="category">Leaderboard</div>
+        //         </div>
+
+        //         <div className="videoSuggestions">
+        //             <div className="allVideos">
+        //                 {allVideos && (
+        //                     allVideos.map((v, index) => {
+        //                         return (
+        //                             <Video data={v} key={Math.random()} />
+        //                         );
+        //                     })
+        //                 )}
+        //             </div>
+
+        //             <div className="pagination">
+        //                 <button onClick={() => prevPage()}>{'<'}</button>
+        //                 <div className="pageCount">{page}</div>
+        //                 <button onClick={() => nextPage()}>{'>'}</button>
+        //             </div>
+        //         </div>
+
+        //     </div>
+        // </div >
     );
 };
 

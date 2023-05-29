@@ -16,7 +16,7 @@ function Modal({ data, setPlayVideo }) {
                     </button>
 
                     <div className="video">
-                        <video controls autoPlay loop width='200px'>
+                        <video controls autoPlay loop muted width='200px'>
                             <source src={data.submission.mediaUrl} />
                         </video>
                     </div>

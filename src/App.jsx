@@ -8,11 +8,13 @@ import Main from './components/Main/Main';
 
 function App() {
 
+  const [showDrawer, setShowDrawer] = useState(true);
+
   return (
     <div className='App'>
 
-      <Navbar />
-      <Main />
+      <Navbar showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
+      <Main showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
 
     </div>
   );
