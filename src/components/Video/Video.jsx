@@ -1,24 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Video.css';
+import Modal from '../Modal/Modal';
 
 
 
 
-function Video() {
+function Video({ data }) {
+
+    const [playVideo, setPlayVideo] = useState(false);
+
     return (
-        <div className='videoContainer'>
-            <div className="thumbnail">
-                <img src="https://dj423fildxgac.cloudfront.net/66fd58de-24be-41c0-a1dd-ee7b3dbd3fb2" alt="thumbnail" />
+        <>
+            <div className='videoContainer'>
+                <div className="thumbnail" onClick={() => setPlayVideo(true)}>
+                    <img src={data.submission.thumbnail} alt="thumbnail" />
+                </div>
+
+                <div className="videoTitle" onClick={() => setPlayVideo(true)}>
+                    {data.submission.title}
+                </div>
+
+                <div className="creatorInfo">
+                    <span>
+                        <img src={data.creator.pic} alt="creator" />
+                    </span>
+                    <span>{data.creator.name}</span>
+                </div>
             </div>
 
-            <div className="videoTitle">The Impossible Task of Mapping Antarctica</div>
-            <div className="creatorInfo">
-                <span>
-                    <img src="https://yt3.googleusercontent.com/ytc/AGIKgqOVBmzCi3g1GN3iO8IsGigl7femqIfupBD2Ze6bzQ=s900-c-k-c0x00ffffff-no-rj" alt="creator" />
-                </span>
-                <span>Jhonny Harris</span>
-            </div>
-        </div>
+            {playVideo && (
+                <Modal data={data} setPlayVideo={setPlayVideo} />
+            )}
+        </>
     );
 };
 

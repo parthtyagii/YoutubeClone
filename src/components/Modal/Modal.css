@@ -1,0 +1,99 @@
+.videoPlayerContainer {
+    width: 100%;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ebecf0c7;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.extra {
+    width: 50%;
+    height: 90vh;
+    padding: 3rem;
+    /* border: 2px solid black; */
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.videoPlayer {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.videoPlayer::-webkit-scrollbar {
+    width: 0.5vw;
+    display: none;
+}
+
+.videoPlayer::-webkit-scrollbar-thumb {
+    background-color: rgb(240, 10, 10);
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.videoPlayer .close {
+    height: auto;
+    font-size: 3rem;
+    font-weight: 500;
+    color: rgba(116,204,28,255);
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    cursor: pointer;
+}
+
+.videoPlayer .video {
+    width: 100%;
+    height: auto;
+    /* background-color: antiquewhite; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.videoPlayer .videoTitle {
+    width: 100%;
+    height: auto;
+    /* background-color: pink; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.videoPlayer .videoDescription {
+    width: 100%;
+    height: auto;
+
+    font-size: 1.8rem;
+    /* overflow-y: auto; */
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 1;
+}

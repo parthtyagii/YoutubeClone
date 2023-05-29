@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Main.css';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import Video from '../Video/Video';
+import axios, { all } from 'axios';
 
 
 
 function Main() {
+
+    const [allVideos, setAllVideos] = useState(null);
+
+    const getAllVideo = async () => {
+        try {
+            const response = await axios.get('https://internship-service.onrender.com/videos?page=1');
+            console.log(response.data.data.posts);
+            setAllVideos(response.data.data.posts);
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
+
+    useEffect(() => {
+        getAllVideo();
+    }, []);
+
     return (
         <div className='mainContainer'>
 
@@ -23,11 +42,13 @@ function Main() {
 
                 <div className="videoSuggestions">
 
-                    <Video />
-                    <Video />
-                    <Video />
-                    <Video />
-                    <Video />
+                    {allVideos && (
+                        allVideos.map((v, index) => {
+                            return (
+                                <Video data={v} key={Math.random()} />
+                            );
+                        })
+                    )}
 
                 </div>
             </div>
