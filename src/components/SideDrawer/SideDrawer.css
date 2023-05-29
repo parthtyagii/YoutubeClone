@@ -1,15 +1,12 @@
 .sideDrawerContainer {
     width: 18%;
-    height: 90vh;
+    height: 100%;
     padding: 1rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
     border-right: 1px solid #a8a9abb5;
     background-color: #e6e7e97d;
-
-    position: fixed;
-    left: 0;
-    top: 6.5rem;
+    color: rgba(0, 0, 0, 0.776);
 
     overflow-y: auto;
 
@@ -67,7 +64,8 @@
 
 .upperPart .options span {
     font-size: 1.5rem;
-    font-weight: 100;
+    font-weight: 500;
+    letter-spacing: 0.03rem;
 }
 
 .sideDrawerContainer .middlePart {
@@ -87,7 +85,7 @@
     height: auto;
     border-radius: 1rem;
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
     padding-left: 1rem;
@@ -133,6 +131,7 @@
 .middlePart .subscription span:nth-of-type(2) {
     font-size: 1.5rem;
     font-weight: 500;
+    letter-spacing: 0.04rem;
 }
 
 .sideDrawerContainer .lowerPart {
@@ -166,7 +165,8 @@
 
 .sideDrawerContainer .lowerPart div span {
     font-size: 1.5rem;
-    font-weight: 100;
+    font-weight: 500;
+    letter-spacing: 0.04rem;
 }
 
 .sideDrawerContainer .lowerPart div .lowerIcon {

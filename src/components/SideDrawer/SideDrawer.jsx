@@ -10,7 +10,6 @@ import { BiHelpCircle } from 'react-icons/bi';
 
 function SideDrawer({ allVideos, showDrawer, setShowDrawer }) {
 
-    console.log(allVideos)
 
     return (
         <div className='sideDrawerContainer' style={showDrawer ? { width: '16%' } : { width: 'auto' }}>
@@ -46,10 +45,10 @@ function SideDrawer({ allVideos, showDrawer, setShowDrawer }) {
                 )}
 
                 {allVideos && (
-                    allVideos.map((v) => {
+                    allVideos.map((v,index) => {
 
                         return (
-                            <div className="subscription" style={showDrawer ? { justifyContent: 'flex-start' } : { justifyContent: 'center' }}>
+                            <div className="subscription" key={index} style={showDrawer ? { justifyContent: 'flex-start' } : { justifyContent: 'center' }}>
                                 <span>
                                     <img src={v.creator.pic} alt="person" />
                                 </span>

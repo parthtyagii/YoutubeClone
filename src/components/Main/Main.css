@@ -1,6 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
 main {
     width: 100%;
     height: calc(100vh - 6.2rem);
+    font-family: 'Roboto', sans-serif;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.videoDisplaySection {
+    height: 100%;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+}
+
+.videoDisplaySection::-webkit-scrollbar {
+    width: 1vw;
+}
+
+.videoDisplaySection::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.videoCategories {
+    width: 100%;
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.videoCategories .category {
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    border-radius: 2rem;
+    background-color: #e6e7e97d;
+    color: rgba(0, 0, 0, 0.877);
+}
+
+.videoCategories .category:nth-of-type(1){
+    background-color: black;
+    color: white
+}
+
+.videoCategories .category:hover{
+    background-color: rgba(116, 204, 28, 255);
+    color: white;
+}
+
+.videoSuggestions {
+    width: 100%;
+    height: auto;
+    padding-bottom: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.videoSuggestions .allVideos {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    column-gap: 2%;
+    row-gap: 4rem;
+}
+
+.videoSuggestions .pagination {
+    width: 100%;
+    height: auto;
+    padding-top: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.videoSuggestions .pagination .pageCount {
+    margin-right: 2rem;
+    margin-left: 2rem;
+    font-size: 3rem;
+}
+
+.videoSuggestions .pagination button {
+    font-size: 3rem;
+    padding: 0.5rem;
 }
 
 
@@ -138,4 +246,6 @@ main {
 .videoSection .pagination button{
     font-size: 3rem;
     padding: 0.5rem;
-} */
+} 
+
+*/

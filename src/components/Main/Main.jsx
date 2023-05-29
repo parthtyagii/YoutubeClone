@@ -46,46 +46,37 @@ function Main({ showDrawer, setShowDrawer }) {
 
     return (
         <main>
+            <SideDrawer allVideos={allVideos} showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
 
+            <div className="videoDisplaySection" style={showDrawer ? { paddingLeft: '2rem', paddingRight: '2rem' } : {}}>
+                <div className="videoCategories" style={showDrawer ? { width: '100%' } : { width: '85%' }}>
+                    <div className="category">All</div>
+                    <div className="category">News</div>
+                    <div className="category">Viral</div>
+                    <div className="category">Gaming</div>
+                    <div className="category">Podcast</div>
+                    <div className="category">Leaderboard</div>
+                </div>
 
+                <div className="videoSuggestions" style={showDrawer ? { width: '100%' } : { width: '85%' }}>
+                    <div className="allVideos">
+                        {allVideos && (
+                            allVideos.map((v, index) => {
+                                return (
+                                    <Video data={v} key={Math.random()} />
+                                );
+                            })
+                        )}
+                    </div>
 
-            
+                    <div className="pagination">
+                        <button onClick={() => prevPage()}>{'<'}</button>
+                        <div className="pageCount">{page}</div>
+                        <button onClick={() => nextPage()}>{'>'}</button>
+                    </div>
+                </div>
+            </div>
         </main>
-        
-        // <div className='mainContainer'>
-
-        //     <SideDrawer allVideos={allVideos} showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
-
-        //     <div className="videoSection">
-        //         <div className="videoCategories">
-        //             <div className="category">All</div>
-        //             <div className="category">News</div>
-        //             <div className="category">Viral</div>
-        //             <div className="category">Gaming</div>
-        //             <div className="category">Podcast</div>
-        //             <div className="category">Leaderboard</div>
-        //         </div>
-
-        //         <div className="videoSuggestions">
-        //             <div className="allVideos">
-        //                 {allVideos && (
-        //                     allVideos.map((v, index) => {
-        //                         return (
-        //                             <Video data={v} key={Math.random()} />
-        //                         );
-        //                     })
-        //                 )}
-        //             </div>
-
-        //             <div className="pagination">
-        //                 <button onClick={() => prevPage()}>{'<'}</button>
-        //                 <div className="pageCount">{page}</div>
-        //                 <button onClick={() => nextPage()}>{'>'}</button>
-        //             </div>
-        //         </div>
-
-        //     </div>
-        // </div >
     );
 };
 
