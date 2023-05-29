@@ -129,9 +129,9 @@
 }
 
 .middlePart .subscription span:nth-of-type(2) {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 500;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.01rem;
 }
 
 .sideDrawerContainer .lowerPart {

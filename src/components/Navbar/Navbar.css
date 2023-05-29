@@ -34,6 +34,7 @@
 .navbarContainer .leftPart .title {
     font-size: 2.4rem;
     font-weight: 700;
+    color: rgba(116, 204, 28, 255);
 }
 
 .navbarContainer .middlePart {

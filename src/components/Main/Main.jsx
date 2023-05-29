@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './Main.css';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import Video from '../Video/Video';
-import axios, { all } from 'axios';
+import axios from 'axios';
+import BounceLoader from 'react-spinners/BounceLoader';
 
 
 
-function Main({ showDrawer, setShowDrawer }) {
+function Main({ showDrawer, setShowDrawer, setLoader }) {
 
     const [allVideos, setAllVideos] = useState(null);
     const [page, setPage] = useState(1);
@@ -16,9 +17,13 @@ function Main({ showDrawer, setShowDrawer }) {
             const response = await axios.get(`https://internship-service.onrender.com/videos?page=${page}`);
             // console.log(response.data.data.posts);
             setAllVideos(response.data.data.posts);
+            setTimeout(() => {
+                setLoader(false);
+            }, 1000);
         }
         catch (err) {
             console.log(err);
+            setLoader(false);
         }
     };
 
@@ -32,11 +37,11 @@ function Main({ showDrawer, setShowDrawer }) {
     }
 
     const prevPage = () => {
-        if (page == 1) {
-            return;
+        if (page !== 1) {
+            setPage(page - 1);
         }
         else {
-            setPage(page - 1);
+            return;
         }
     }
 
