@@ -22,7 +22,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap: 4rem;
+    column-gap: 3rem;
 }
 
 .navbarContainer .leftPart .sideDrawer {
@@ -99,4 +99,38 @@
     height: 4.2rem;
     border-radius: 50%;
     object-fit: cover;
+}
+
+@media(min-width:320px) and (max-width:800px) {
+
+    .navbarContainer .leftPart {
+        column-gap: 1rem;
+    }
+
+    .navbarContainer .leftPart .sideDrawer {
+        /* font-size: 1.3rem; */
+        display: none;
+    }
+
+    .navbarContainer .leftPart .title {
+        font-size: 1.3rem;
+    }
+
+    .navbarContainer .middlePart input {
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .navbarContainer .middlePart .searchIcon {
+        font-size: 1.2rem;
+    }
+
+    .navbarContainer .rightPart .userPic img {
+        width: 2.5rem;
+        height: 2.5em;
+    }
+
+    .navbarContainer .rightPart .videoIcon {
+        font-size: 2rem;
+    }
 }
