@@ -4,6 +4,7 @@ import SideDrawer from '../SideDrawer/SideDrawer';
 import Video from '../Video/Video';
 import axios from 'axios';
 import BounceLoader from 'react-spinners/BounceLoader';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 
 
@@ -11,13 +12,16 @@ function Main({ showDrawer, setShowDrawer, setLoader }) {
 
     const [allVideos, setAllVideos] = useState(null);
     const [page, setPage] = useState(1);
+    const [videosLoader, setVideosLoader] = useState(false);
 
     const getAllVideo = async () => {
+        setVideosLoader(true);
         try {
             const response = await axios.get(`https://internship-service.onrender.com/videos?page=${page}`);
             // console.log(response.data.data.posts);
             setAllVideos(response.data.data.posts);
             setTimeout(() => {
+                setVideosLoader(false);
                 setLoader(false);
             }, 1000);
         }
@@ -64,15 +68,23 @@ function Main({ showDrawer, setShowDrawer, setLoader }) {
                 </div>
 
                 <div className="videoSuggestions" style={showDrawer ? { width: '100%' } : { width: '85%' }}>
-                    <div className="allVideos">
-                        {allVideos && (
-                            allVideos.map((v, index) => {
-                                return (
-                                    <Video data={v} key={Math.random()} />
-                                );
-                            })
-                        )}
-                    </div>
+                    {!videosLoader && allVideos && (
+                        <div className="allVideos">
+                            {allVideos && (
+                                allVideos.map((v, index) => {
+                                    return (
+                                        <Video data={v} key={Math.random()} />
+                                    );
+                                })
+                            )}
+                        </div>
+                    )}
+
+                    {videosLoader && (
+                        <div className="videosLoader">
+                            <ClipLoader color='rgba(116, 204, 28, 255)' size='60px' />
+                        </div>
+                    )}
 
                     <div className="pagination">
                         <button onClick={() => prevPage()}>{'<'}</button>

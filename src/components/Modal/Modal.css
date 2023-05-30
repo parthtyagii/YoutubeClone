@@ -56,7 +56,6 @@
     width: auto;
     height: 100%;
     position: relative;
-    /* background-color: indianred; */
 
     display: flex;
     justify-content: center;
@@ -70,7 +69,6 @@
 .videoPlayer .videoInfo {
     width: 100%;
     height: auto;
-    /* background-color: pink; */
 
     display: flex;
     flex-direction: column;

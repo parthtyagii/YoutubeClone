@@ -39,7 +39,6 @@ main {
     height: auto;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    /* background-color: pink; */
 
     display: flex;
     justify-content: flex-start;
@@ -110,12 +109,12 @@ main {
     margin-right: 3rem;
     margin-left: 3rem;
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .videoSuggestions .pagination button {
     font-size: 3rem;
-    font-weight: 800;
+    font-weight: 700;
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 2rem;
@@ -124,6 +123,15 @@ main {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+.videosLoader {
+    width: 100%;
+    height: 60vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media(min-width:320px) and (max-width:800px) {
@@ -145,7 +153,6 @@ main {
     .videoSuggestions .pagination button {
         font-size: 2.5rem;
     }
-
 }
 
 
