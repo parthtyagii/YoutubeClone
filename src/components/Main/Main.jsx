@@ -11,7 +11,7 @@ import ClipLoader from 'react-spinners/ClipLoader';
 function Main({ showDrawer, setShowDrawer, setLoader }) {
 
     const [allVideos, setAllVideos] = useState(null);
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
     const [videosLoader, setVideosLoader] = useState(false);
 
     const getAllVideo = async () => {
@@ -41,7 +41,7 @@ function Main({ showDrawer, setShowDrawer, setLoader }) {
     }
 
     const prevPage = () => {
-        if (page !== 1) {
+        if (page !== 0) {
             setPage(page - 1);
         }
         else {
@@ -88,7 +88,7 @@ function Main({ showDrawer, setShowDrawer, setLoader }) {
 
                     <div className="pagination">
                         <button onClick={() => prevPage()}>{'<'}</button>
-                        <div className="pageCount">{page}</div>
+                        <div className="pageCount">{page + 1}</div>
                         <button onClick={() => nextPage()}>{'>'}</button>
                     </div>
                 </div>
