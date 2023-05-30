@@ -13,7 +13,7 @@ function Navbar({ setShowDrawer, showDrawer }) {
                 <RxHamburgerMenu onClick={() => setShowDrawer(!showDrawer)} className='sideDrawer' />
 
                 <span className="title">
-                    MeTube
+                    MyTube
                 </span>
             </div>
 
